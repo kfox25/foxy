@@ -68,12 +68,13 @@ report_pref = check_rep_pref('Do you want to increment by (D)ays, (H)ours, (M)in
 monthly_net = monthly_takehome - monthly_expenses
 net_day = monthly_net / days_in_current_month
 net_hour = net_day / 24
-net_min = net_hour / 60
-net_sec = net_min / 60
-#work days/hours
+#if work days/hours
 if work_pref == 'Y':
     net_day = monthly_net / workdays_in_current_month
     net_hour = net_day / 8
+# if NOT work days/hours    
+net_min = net_hour / 60
+net_sec = net_min / 60
 
 
 ### ticker
