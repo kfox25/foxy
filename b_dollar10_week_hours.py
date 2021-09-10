@@ -1,9 +1,9 @@
 ### Bottom Dollar is a financial phone app that displays the amount your savings is increasing in real-time. 
-### It subtracts your monthly expenses from your monthly take-home pay to arrive at a monthly, net savings.
+### It subtracts your monthly expenses from your monthly take-home pay to arrive at a monthly, net-savings amount.
 ### It then displays that savings in real-time by the second, minute, hour or day.
-### Having this information at hand is meant to provide positive feedback on your progress and 
+### Having this information at hand is meant to provide positive feedback on your savings progress and 
 ### encourage thought on opportunities to decrease your monthly expenses.
-### In the future, this app will use a link to the your checking account to pull credits and debits
+### In the future, this app will use a link to your checking account to pull credits and debits
 ### which will yield a more accurate rolling, net-savings.
 
 import time
