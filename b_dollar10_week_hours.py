@@ -102,9 +102,9 @@ while True:
     if report_pref == 'D':
         incrmt_str, increase_save, slp = 'day', net_day, 1 #86400
     elif report_pref =='H':
-        incrmt_str, increase_save, slp = 'hour', net_hour, 1 #3600
+        incrmt_str, increase_save, slp = 'hour', net_hour, 3600
     elif report_pref == 'M':
-        incrmt_str, increase_save, slp = 'minute', net_min, 1, #60
+        incrmt_str, increase_save, slp = 'minute', net_min, 60
     elif report_pref == 'S':
         incrmt_str, increase_save, slp = 'second', net_sec, 1
     else:
@@ -134,6 +134,7 @@ while True:
             time.sleep(slp) 
 
 # TO-DO/QUESTIONS
+# * Use user input start time and end time to adjust net calc.
 # * How to play a tone using just python?
 # * Which blocks of script need to be inside of the Ticker, while loop?
 # * Is monthrange() the best way to get the number of days in the current month?
