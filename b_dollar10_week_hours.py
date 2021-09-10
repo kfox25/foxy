@@ -100,9 +100,9 @@ while True:
 
     #cast preferences, sleep is set to 1 second for all of them
     if report_pref == 'D':
-        incrmt_str, increase_save, slp = 'day', net_day, 1 #8640
+        incrmt_str, increase_save, slp = 'day', net_day, 1 #86400
     elif report_pref =='H':
-        incrmt_str, increase_save, slp = 'hour', net_hour, 1 #360
+        incrmt_str, increase_save, slp = 'hour', net_hour, 1 #3600
     elif report_pref == 'M':
         incrmt_str, increase_save, slp = 'minute', net_min, 1, #60
     elif report_pref == 'S':
