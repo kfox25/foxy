@@ -10,10 +10,10 @@
 ### which will yield a more accurate rolling, net-savings.                                                         ###
 ######################################################################################################################
 
-
 import time
 import calendar
 from datetime import date, datetime
+
 
 ### get the total number of days in the current month
 month = datetime.now().month
@@ -99,6 +99,7 @@ def base_12_to_10(time_from_input):
 
 work_day_duration = base_12_to_10(day_end) - base_12_to_10(day_start)
 
+
 ### breakdown monthly net into smaller amounts
 monthly_net = monthly_takehome - monthly_expenses
 net_day = monthly_net / days_in_current_month
@@ -109,7 +110,6 @@ if work_pref == 'Y':
     net_hour = net_day / work_day_duration  
 net_min = net_hour / 60
 net_sec = net_min / 60
-
 
 
 ### ticker
@@ -146,7 +146,6 @@ while True:
             print('Your Bottom Dollar by', incrmt_str, 'is:', '${:.2f}'.format(position))
             position += increase_save
             time.sleep(slp) 
-
     else:
         while True:
             print('Your Bottom Dollar by', incrmt_str, 'is:', '${:.2f}'.format(position))
