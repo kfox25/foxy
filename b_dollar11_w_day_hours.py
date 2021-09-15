@@ -98,7 +98,8 @@ def base_12_to_10(time_from_input):
     final = int(hours + minutes) /100
     return final
 
-work_day_duration = base_12_to_10(day_end) - base_12_to_10(day_start)
+if work_pref == 'Y':
+    work_day_duration = base_12_to_10(day_end) - base_12_to_10(day_start)
 
 
 ### breakdown monthly net into smaller amounts
