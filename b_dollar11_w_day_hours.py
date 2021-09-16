@@ -48,7 +48,7 @@ def check_time_2400(prompt):
         except ValueError:
             print('Entry must be an integer.')
             continue
-            
+
         if value >= 0 and value <= 2400:
             break
         else:
@@ -58,9 +58,8 @@ def check_time_2400(prompt):
 
 def check_y_or_n(prompt):
     while True:
-        value = input(prompt)
-        if value.upper() in ['Y','N']:
-            value = value.upper()
+        value = input(prompt).casefold()
+        if value in ['y','n']:
             break
         else:
             print('Entry must be "Y" or "N".')
@@ -68,9 +67,8 @@ def check_y_or_n(prompt):
 
 def check_report_pref(prompt):
     while True:
-        value = input(prompt)
-        if value.upper() in ['D','H','M','S']:
-            value = value.upper()
+        value = input(prompt).casefold()
+        if value in ['d','h','m','s']:
             break
         else:
             print('Entry must be "D", "H", "M", or "S".')
@@ -82,7 +80,7 @@ starting_balance = check_integer('Enter your balance as of today: ')
 monthly_takehome = check_integer('Enter your monthly takehome pay: ')
 monthly_expenses = check_integer('Enter the total of your monthly expenses: ')
 work_pref = check_y_or_n('Do you want calculations restricted to workdays/workhours? Y/N: ')
-if work_pref == 'Y':
+if work_pref == 'y':
     day_start = check_time_2400('What time does your workday start? 8:30AM = 830: ')
     day_end = check_time_2400('What time does your workday end? 5:30PM = 1730: ')
 report_pref = check_report_pref('Do you want to increment by (D)ays, (H)ours, (M)inutes, or (S)econds?: ')
@@ -98,7 +96,7 @@ def base_60_to_100(time_from_input):
     final = int(hours + minutes) /100
     return final
 
-if work_pref == 'Y':
+if work_pref == 'y':
     work_day_duration = base_60_to_100(day_end) - base_60_to_100(day_start)
 
 
@@ -107,7 +105,7 @@ monthly_net = monthly_takehome - monthly_expenses
 net_day = monthly_net / days_in_current_month
 net_hour = net_day / 24
 # if work days/hours
-if work_pref == 'Y':
+if work_pref == 'y':
     net_day = monthly_net / workdays_in_current_month
     net_hour = net_day / work_day_duration  
 net_min = net_hour / 60
@@ -121,13 +119,13 @@ while True:
 
     # cast preferences
     # Set slp to 1 for testing
-    if report_pref == 'D':
+    if report_pref == 'd':
         incrmt_str, increase_save, slp = 'day', net_day, 1 #86400
-    elif report_pref =='H':
+    elif report_pref =='h':
         incrmt_str, increase_save, slp = 'hour', net_hour, 1 #3600
-    elif report_pref == 'M':
+    elif report_pref == 'm':
         incrmt_str, increase_save, slp = 'minute', net_min, 1 #60
-    elif report_pref == 'S':
+    elif report_pref == 's':
         incrmt_str, increase_save, slp = 'second', net_sec, 1
     else:
         print('Something has gone wrong.')
@@ -143,7 +141,7 @@ while True:
         return x
 
     # control flow for workdays/hours
-    if work_pref == 'Y':
+    if work_pref == 'y':
         while day_start <= now_time() <= day_end and date.today().weekday() in [1,2,3,4,5]:
             print('Your Bottom Dollar by', incrmt_str, 'is:', '${:,.2f}'.format(position))
             position += increase_save
