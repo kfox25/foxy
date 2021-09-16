@@ -11,6 +11,7 @@
 ###                                                                                                                 ###
 #######################################################################################################################
 
+
 import time
 import calendar
 from datetime import date, datetime
@@ -76,7 +77,7 @@ def check_report_pref(prompt):
     return value
 
 
-## get user input on financials and reporting preference and run them through checking functions.
+### get user input on financials and reporting preference and run them through checking functions.
 starting_balance = check_integer('Enter your balance as of today: ')
 monthly_takehome = check_integer('Enter your monthly takehome pay: ')
 monthly_expenses = check_integer('Enter the total of your monthly expenses: ')
@@ -106,7 +107,7 @@ if work_pref == 'Y':
 monthly_net = monthly_takehome - monthly_expenses
 net_day = monthly_net / days_in_current_month
 net_hour = net_day / 24
-#if work days/hours
+# if work days/hours
 if work_pref == 'Y':
     net_day = monthly_net / workdays_in_current_month
     net_hour = net_day / work_day_duration  
@@ -119,21 +120,21 @@ global position
 position = starting_balance
 while True:
 
-    #cast preferences, sleep is set to 1 second for all of them
-    #Set slp to 1 for testing
+    # cast preferences
+    # Set slp to 1 for testing
     if report_pref == 'D':
         incrmt_str, increase_save, slp = 'day', net_day, 1 #86400
     elif report_pref =='H':
-        incrmt_str, increase_save, slp = 'hour', net_hour, 3600
+        incrmt_str, increase_save, slp = 'hour', net_hour, 1 #3600
     elif report_pref == 'M':
-        incrmt_str, increase_save, slp = 'minute', net_min, 60
+        incrmt_str, increase_save, slp = 'minute', net_min, 1 #60
     elif report_pref == 'S':
         incrmt_str, increase_save, slp = 'second', net_sec, 1
     else:
         print('Something has gone wrong.')
         break
 
-    #get current time  
+    # get current time  
     def now_time():
         x = datetime.now().time()
         x = str(x)
@@ -142,15 +143,15 @@ while True:
         x = int(x)
         return x
 
-    ## control flow for workdays/hours
+    # control flow for workdays/hours
     if work_pref == 'Y':
         while day_start <= now_time() <= day_end and date.today().weekday() in [1,2,3,4,5]:
-            print('Your Bottom Dollar by', incrmt_str, 'is:', '${:.2f}'.format(position))
+            print('Your Bottom Dollar by', incrmt_str, 'is:', '${:,.2f}'.format(position))
             position += increase_save
             time.sleep(slp) 
     else:
         while True:
-            print('Your Bottom Dollar by', incrmt_str, 'is:', '${:.2f}'.format(position))
+            print('Your Bottom Dollar by', incrmt_str, 'is:', '${:,.2f}'.format(position))
             position += increase_save
             time.sleep(slp) 
 
