@@ -89,18 +89,17 @@ report_pref = check_report_pref('Do you want to increment by (D)ays, (H)ours, (M
 
 
 ### get duration of workday to use to calculate net hour amount
-def base_12_to_10(time_from_input):
+def base_60_to_100(time_from_input):
     time_from_input = str(time_from_input)
     hours = time_from_input[:-2]
     minutes = time_from_input[-2:]
     minutes = str(int(int(minutes) * (5/3)))
-    if len(minutes) == 1:
-        minutes = '0' + minutes
+    minutes = minutes.zfill(2)
     final = int(hours + minutes) /100
     return final
 
 if work_pref == 'Y':
-    work_day_duration = base_12_to_10(day_end) - base_12_to_10(day_start)
+    work_day_duration = base_60_to_100(day_end) - base_60_to_100(day_start)
 
 
 ### breakdown monthly net into smaller amounts
@@ -157,6 +156,8 @@ while True:
 
 
 # TO-DO/QUESTIONS
+# * For if statements using strings, should the strings always be lower case and utilize CASEFOLD() on input. 
+# * Should a function return an integer as a int, float, or str. Styleguide?
 # * How to play a tone using just python?
 # * Which blocks of script need to be inside of the Ticker, while loop?
 # * Is monthrange() the best way to get the number of days in the current month?
