@@ -1,10 +1,10 @@
 #######################################################################################################################
-###                                 YOU CAN BET YOUR BOTTOM DOLLAR!                                                 ###
+###                                      YOU CAN BET YOUR BOTTOM DOLLAR!                                            ###
 ###                                                                                                                 ###
 ###  Bottom Dollar is a financial phone app that displays the amount your savings is increasing in real-time.       ###
 ###  It subtracts your monthly expenses from your monthly take-home pay to arrive at a monthly, net-savings amount. ###
 ###  It then displays that savings in real-time as it accrues by the second, minute, hour or day.                   ###
-###  Having this information at hand is meant to provide positive feedback on your savings progress and             ###
+###  Having this information at hand is meant to provide positive feedback on your savings' progress and            ###
 ###  encourage thought on opportunities to decrease your monthly expenses.                                          ###
 ###  In the future, this app will use a link to your checking account to pull credits and debits                    ###
 ###  which will yield a more accurate rolling, net-savings.                                                         ###
@@ -93,8 +93,8 @@ def base_60_to_100(time_from_input):
     minutes = time_from_input[-2:]
     minutes = str(int(int(minutes) * (5/3)))
     minutes = minutes.zfill(2)
-    final = int(hours + minutes) /100
-    return final
+    hour_min = int(hours + minutes) /100
+    return hour_min
 
 if work_pref == 'y':
     work_day_duration = base_60_to_100(day_end) - base_60_to_100(day_start)
@@ -157,7 +157,7 @@ while True:
 # * For if statements using strings, should the strings always be lower case and utilize CASEFOLD() on input. 
 # * Should a function return an integer as a int, float, or str. Styleguide?
 # * How to play a tone using just python?
-# * Which blocks of script need to be inside of the Ticker, while loop?
+# * Which blocks of script need to be inside of the Ticker's while loop?
 # * Is monthrange() the best way to get the number of days in the current month?
 # * Is it better to use date or datetime to get arguments for monthrange()?
 # * Does Python/VS code have an automated testing module that handles user input.
