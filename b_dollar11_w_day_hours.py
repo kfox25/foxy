@@ -33,46 +33,38 @@ for x in range(days_in_current_month):
 ### functions to check user input
 def check_integer(prompt):
     while True:
-        try:
-            value = int(input(prompt))
-        except ValueError:
-            print('Entry must be an integer.')
-            continue
-        break
-    return value
+        value = input(prompt)
+        if value.isdecimal():
+            return int(value)
+        else:
+            print('Entry must be a positive integer.')
 
 def check_time_2400(prompt):
     while True:
-        try:
-            value = int(input(prompt))
-        except ValueError:
-            print('Entry must be an integer.')
-            continue
-
-        if value >= 0 and value <= 2400:
-            break
+        value = input(prompt)
+        if value.isdecimal():
+            if int(value) <= 2400:
+                return int(value)
+            else:
+                print('Entry must be less than 2400.')                
         else:
-            print('Entry must be between 0 and 2400.')
-            continue    
-    return value
+            print('Entry must be a positive integer.')
 
 def check_y_or_n(prompt):
     while True:
         value = input(prompt).casefold()
         if value in ['y','n']:
-            break
+            return value
         else:
             print('Entry must be "Y" or "N".')
-    return value
 
 def check_report_pref(prompt):
     while True:
         value = input(prompt).casefold()
         if value in ['d','h','m','s']:
-            break
+            return value
         else:
             print('Entry must be "D", "H", "M", or "S".')
-    return value
 
 
 ### get user input on financials and reporting preference and run them through checking functions.
