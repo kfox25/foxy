@@ -159,7 +159,6 @@ while True:
 # class Test():
 #     def __init__(self):
 #         pass
-
 #     def check_integer(self,prompt):
 #         while True:
 #             value = input(prompt)
@@ -168,7 +167,6 @@ while True:
 #             else:
 #                 print('Entry must be a positive integer.')
 
-# starting_balance = Test().check_integer('Enter an Integer: ')
-# print(type(starting_balance), starting_balance)
 
+# starting_balance = Test().check_integer('Enter an Integer: ')
 #
