@@ -144,6 +144,7 @@ while True:
 
 
 # TO-DO/QUESTIONS
+# * Which sections do I wrap up into Main()? Phil!?
 # * For if statements using strings, should the strings always be lower case and utilize CASEFOLD() on input. 
 # * Should a function return an integer as a int, float, or str. Styleguide?
 # * How to play a tone using just python?
@@ -159,6 +160,7 @@ while True:
 # class Test():
 #     def __init__(self):
 #         pass
+
 #     def check_integer(self,prompt):
 #         while True:
 #             value = input(prompt)
@@ -167,6 +169,7 @@ while True:
 #             else:
 #                 print('Entry must be a positive integer.')
 
-
 # starting_balance = Test().check_integer('Enter an Integer: ')
+# print(type(starting_balance), starting_balance)
+
 #
