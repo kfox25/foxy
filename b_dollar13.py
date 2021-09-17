@@ -157,7 +157,7 @@ while True:
 
 # * Should I put the checking functions into a class and run methods on prompts?
 
-# class Test():
+# class Check_it():
 #     def __init__(self):
 #         pass
 
@@ -169,7 +169,7 @@ while True:
 #             else:
 #                 print('Entry must be a positive integer.')
 
-# starting_balance = Test().check_integer('Enter an Integer: ')
+# starting_balance = Check_it().check_integer('Enter an Integer: ')
 # print(type(starting_balance), starting_balance)
 
 #
