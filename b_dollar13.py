@@ -152,3 +152,23 @@ while True:
 # * Is it better to use date or datetime to get arguments for monthrange()?
 # * Does Python/VS code have an automated testing module that handles user input.
 # * Is there one day a month when a checking account is more 'accurate' than other days? 
+
+
+# * Should I put the checking functions into a class and run methods on prompts?
+
+# class Test():
+#     def __init__(self):
+#         pass
+
+#     def check_integer(self,prompt):
+#         while True:
+#             value = input(prompt)
+#             if value.isdecimal():
+#                 return int(value)
+#             else:
+#                 print('Entry must be a positive integer.')
+
+# starting_balance = Test().check_integer('Enter an Integer: ')
+# print(type(starting_balance), starting_balance)
+
+#
