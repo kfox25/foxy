@@ -1,0 +1,14 @@
+nums = [30, 30, 30, 30, 30, 21, 39]
+rems = [num % 60  for num in nums]
+mods = {rem: rems.count(rem) for rem in rems}
+
+
+total = 0
+for k, v in mods.items():
+    match = 60-k
+    if k == 0 or k == 30:
+        total += ((v*(v-1)))/2
+
+    elif match in mods:
+        total += ((v * mods[match] / 2))
+print(total)
