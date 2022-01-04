@@ -1,0 +1,25 @@
+"""What is 'a' in Python?"""
+a,b = 20,30
+
+
+"""if/else"""
+if a < b:
+    print('smaller')
+elif a > b:
+    print('bigger')
+else:
+    print('equal')
+
+
+"""ternary"""
+x = "smaller" if a<b else "bigger"
+print(x)
+
+
+"""tuple"""
+x = ("bigger","smaller")[a<b]
+print(x)
+
+
+"""Obvious drawback is ternary and tuple can only handle one condition, 
+but I keep seeing the tuple in the answer to problem sets"""
