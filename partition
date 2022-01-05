@@ -1,0 +1,9 @@
+s = 'aab'
+new = []
+while s:
+    for i in range(len(s)):
+        pal = s[0:i+1]
+        if pal == pal[::-1]:
+            new.append(pal)
+    s = s[1:]
+print(list(set(new)))
