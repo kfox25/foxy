@@ -1,0 +1,17 @@
+
+subuser = 'a_mcfucker'
+
+bad_words = 'piss, shit, fuck, turds, wank, arse, cock, rape, dick, handjob'
+memo = bad_words.split(', ')
+
+def prof_check(subuser):
+    subuser = subuser.replace('_','')
+    while subuser:
+        for i in range(len(subuser)):
+            part = subuser[0:i+1]
+            if part in memo:
+                return f"Don't use '{part}' you dumb fuck!"
+        subuser = subuser[1:]
+
+result = prof_check(subuser)
+print(result)
